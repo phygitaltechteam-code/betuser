@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronDown, Info } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, {useState} from 'react';
+import {ChevronDown, Info} from 'lucide-react';
+import {motion, AnimatePresence} from 'framer-motion';
 
 interface OddsValue {
   price: string;
@@ -19,28 +19,28 @@ const MATCH_ODDS_DATA: TennisOdds[] = [
     id: '1',
     name: 'Katherine Sebov',
     back: [
-      { price: '1.29', size: '276.83' },
-      { price: '1.30', size: '279.83' },
-      { price: '1.31', size: '5.95' },
+      {price: '1.29', size: '276.83'},
+      {price: '1.30', size: '279.83'},
+      {price: '1.31', size: '5.95'},
     ],
     lay: [
-      { price: '1.46', size: '10.85' },
-      { price: '1.47', size: '76.74' },
-      { price: '1.48', size: '28.49' },
+      {price: '1.46', size: '10.85'},
+      {price: '1.47', size: '76.74'},
+      {price: '1.48', size: '28.49'},
     ],
   },
   {
     id: '2',
     name: 'Dalila Jakupovic',
     back: [
-      { price: '3.10', size: '13.60' },
-      { price: '3.15', size: '35.81' },
-      { price: '3.20', size: '4.95' },
+      {price: '3.10', size: '13.60'},
+      {price: '3.15', size: '35.81'},
+      {price: '3.20', size: '4.95'},
     ],
     lay: [
-      { price: '4.30', size: '1.81' },
-      { price: '4.40', size: '82.68' },
-      { price: '4.50', size: '79.36' },
+      {price: '4.30', size: '1.81'},
+      {price: '4.40', size: '82.68'},
+      {price: '4.50', size: '79.36'},
     ],
   },
 ];
@@ -50,28 +50,28 @@ const SET_BETTING_DATA: TennisOdds[] = [
     id: '1',
     name: 'Katherine Sebov to win 1st Set',
     back: [
-      { price: '1.85', size: '124.50' },
-      { price: '1.86', size: '98.30' },
-      { price: '1.87', size: '45.20' },
+      {price: '1.85', size: '124.50'},
+      {price: '1.86', size: '98.30'},
+      {price: '1.87', size: '45.20'},
     ],
     lay: [
-      { price: '1.88', size: '67.80' },
-      { price: '1.89', size: '112.40' },
-      { price: '1.90', size: '89.30' },
+      {price: '1.88', size: '67.80'},
+      {price: '1.89', size: '112.40'},
+      {price: '1.90', size: '89.30'},
     ],
   },
   {
     id: '2',
     name: 'Dalila Jakupovic to win 1st Set',
     back: [
-      { price: '2.10', size: '87.60' },
-      { price: '2.11', size: '54.20' },
-      { price: '2.12', size: '32.10' },
+      {price: '2.10', size: '87.60'},
+      {price: '2.11', size: '54.20'},
+      {price: '2.12', size: '32.10'},
     ],
     lay: [
-      { price: '2.13', size: '45.80' },
-      { price: '2.14', size: '78.90' },
-      { price: '2.15', size: '92.40' },
+      {price: '2.13', size: '45.80'},
+      {price: '2.14', size: '78.90'},
+      {price: '2.15', size: '92.40'},
     ],
   },
 ];
@@ -83,7 +83,7 @@ export default function Tennis() {
   return (
     <div className="min-h-screen bg-[#F5F5F5] font-sans text-[#333]">
       {/* Top Banner Header */}
-      <header className="sticky top-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#2C110C] px-4 py-2 text-sm font-semibold text-white gap-2">
+      <header className="top-0 z-50 flex flex-col items-start justify-between gap-2 bg-[#2C110C] px-4 py-2 text-sm font-semibold text-white sm:flex-row sm:items-center">
         <div className="flex items-center gap-2">
           <span>Kat Sebov v Jakupovic - WTA Istanbul 2026</span>
         </div>
@@ -105,7 +105,7 @@ export default function Tennis() {
                 Match Odds
               </h2>
               <div className="flex items-center gap-2">
-                <button className="bg-black text-green-400 px-3 py-0.5 rounded text-[10px] font-bold hover:bg-gray-800 transition-colors">
+                <button className="hover:bg-gray-800 rounded bg-black px-3 py-0.5 text-[10px] font-bold text-green-400 transition-colors">
                   Cash Out
                 </button>
                 <motion.div
@@ -283,8 +283,8 @@ export default function Tennis() {
           </section>
 
           {/* Info Message */}
-          <div className="bg-white rounded border border-gray-200 p-3 shadow-sm">
-            <div className="flex items-center gap-2 text-red-600 font-bold text-[10px] md:text-xs">
+          <div className="border-gray-200 rounded border bg-white p-3 shadow-sm">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-red-600 md:text-xs">
               <Info size={14} />
               <span>WRONG TRADE BETS ONLY PROFIT BETS VOID HOGI</span>
             </div>
@@ -311,9 +311,9 @@ export default function Tennis() {
               <h3 className="font-bold">Rules & Info</h3>
             </div>
             <p className="text-gray-600 text-xs leading-relaxed">
-              Place your bets on the tennis match outcome. Back (Blue) means you think it
-              will happen. Lay (Pink) means you think it won't. Odd values are
-              updated periodically based on market liquidity.
+              Place your bets on the tennis match outcome. Back (Blue) means you
+              think it will happen. Lay (Pink) means you think it won't. Odd
+              values are updated periodically based on market liquidity.
             </p>
           </div>
         </aside>

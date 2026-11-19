@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronDown, Info } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, {useState} from 'react';
+import {ChevronDown, Info} from 'lucide-react';
+import {motion, AnimatePresence} from 'framer-motion';
 
 interface OddsValue {
   price: string;
@@ -19,42 +19,42 @@ const MATCH_ODDS_DATA: MarketOdds[] = [
     id: '1',
     name: 'Everton',
     back: [
-      { price: '6.6', size: '1.6K' },
-      { price: '6.8', size: '2.4K' },
-      { price: '7.0', size: '1.3K' },
+      {price: '6.6', size: '1.6K'},
+      {price: '6.8', size: '2.4K'},
+      {price: '7.0', size: '1.3K'},
     ],
     lay: [
-      { price: '7.2', size: '708.30' },
-      { price: '7.4', size: '1.5K' },
-      { price: '7.6', size: '4.2K' },
+      {price: '7.2', size: '708.30'},
+      {price: '7.4', size: '1.5K'},
+      {price: '7.6', size: '4.2K'},
     ],
   },
   {
     id: '2',
     name: 'Man City',
     back: [
-      { price: '1.51', size: '8.8K' },
-      { price: '1.52', size: '13.5K' },
-      { price: '1.53', size: '450.30' },
+      {price: '1.51', size: '8.8K'},
+      {price: '1.52', size: '13.5K'},
+      {price: '1.53', size: '450.30'},
     ],
     lay: [
-      { price: '1.54', size: '4.9K' },
-      { price: '1.55', size: '14.1K' },
-      { price: '1.56', size: '6.6K' },
+      {price: '1.54', size: '4.9K'},
+      {price: '1.55', size: '14.1K'},
+      {price: '1.56', size: '6.6K'},
     ],
   },
   {
     id: '3',
     name: 'The Draw',
     back: [
-      { price: '4.6', size: '2.0K' },
-      { price: '4.7', size: '2.6K' },
-      { price: '4.8', size: '1.6K' },
+      {price: '4.6', size: '2.0K'},
+      {price: '4.7', size: '2.6K'},
+      {price: '4.8', size: '1.6K'},
     ],
     lay: [
-      { price: '4.9', size: '1.0K' },
-      { price: '5.0', size: '3.0K' },
-      { price: '5.1', size: '3.7K' },
+      {price: '4.9', size: '1.0K'},
+      {price: '5.0', size: '3.0K'},
+      {price: '5.1', size: '3.7K'},
     ],
   },
 ];
@@ -64,28 +64,28 @@ const OVER_UNDER_05_DATA: MarketOdds[] = [
     id: '1',
     name: 'Under 0.5 Goals',
     back: [
-      { price: '19.5', size: '27.30' },
-      { price: '20.0', size: '2.00' },
-      { price: '21.0', size: '129.76' },
+      {price: '19.5', size: '27.30'},
+      {price: '20.0', size: '2.00'},
+      {price: '21.0', size: '129.76'},
     ],
     lay: [
-      { price: '22.0', size: '1.81' },
-      { price: '23.0', size: '145.10' },
-      { price: '24.0', size: '55.13' },
+      {price: '22.0', size: '1.81'},
+      {price: '23.0', size: '145.10'},
+      {price: '24.0', size: '55.13'},
     ],
   },
   {
     id: '2',
     name: 'Over 0.5 Goals',
     back: [
-      { price: '1.02', size: '15.6K' },
-      { price: '1.03', size: '37.8K' },
-      { price: '1.04', size: '49.3K' },
+      {price: '1.02', size: '15.6K'},
+      {price: '1.03', size: '37.8K'},
+      {price: '1.04', size: '49.3K'},
     ],
     lay: [
-      { price: '1.05', size: '2.6K' },
-      { price: '1.06', size: '18.0K' },
-      { price: '1.07', size: '7.5K' },
+      {price: '1.05', size: '2.6K'},
+      {price: '1.06', size: '18.0K'},
+      {price: '1.07', size: '7.5K'},
     ],
   },
 ];
@@ -95,28 +95,28 @@ const OVER_UNDER_15_DATA: MarketOdds[] = [
     id: '1',
     name: 'Under 1.5 Goals',
     back: [
-      { price: '5.0', size: '287.51' },
-      { price: '5.1', size: '845.17' },
-      { price: '5.2', size: '117.58' },
+      {price: '5.0', size: '287.51'},
+      {price: '5.1', size: '845.17'},
+      {price: '5.2', size: '117.58'},
     ],
     lay: [
-      { price: '5.4', size: '420.81' },
-      { price: '5.5', size: '52.39' },
-      { price: '5.6', size: '1.0K' },
+      {price: '5.4', size: '420.81'},
+      {price: '5.5', size: '52.39'},
+      {price: '5.6', size: '1.0K'},
     ],
   },
   {
     id: '2',
     name: 'Over 1.5 Goals',
     back: [
-      { price: '1.20', size: '1.2K' },
-      { price: '1.21', size: '720.59' },
-      { price: '1.22', size: '6.7K' },
+      {price: '1.20', size: '1.2K'},
+      {price: '1.21', size: '720.59'},
+      {price: '1.22', size: '6.7K'},
     ],
     lay: [
-      { price: '1.24', size: '860.08' },
-      { price: '1.25', size: '4.2K' },
-      { price: '1.26', size: '1.0K' },
+      {price: '1.24', size: '860.08'},
+      {price: '1.25', size: '4.2K'},
+      {price: '1.26', size: '1.0K'},
     ],
   },
 ];
@@ -126,28 +126,28 @@ const OVER_UNDER_25_DATA: MarketOdds[] = [
     id: '1',
     name: 'Under 2.5 Goals',
     back: [
-      { price: '2.40', size: '111.52' },
-      { price: '2.42', size: '233.61' },
-      { price: '2.44', size: '8.35' },
+      {price: '2.40', size: '111.52'},
+      {price: '2.42', size: '233.61'},
+      {price: '2.44', size: '8.35'},
     ],
     lay: [
-      { price: '2.46', size: '39.95' },
-      { price: '2.48', size: '764.45' },
-      { price: '2.50', size: '706.64' },
+      {price: '2.46', size: '39.95'},
+      {price: '2.48', size: '764.45'},
+      {price: '2.50', size: '706.64'},
     ],
   },
   {
     id: '2',
     name: 'Over 2.5 Goals',
     back: [
-      { price: '1.67', size: '1.2K' },
-      { price: '1.68', size: '610.68' },
-      { price: '1.69', size: '23.18' },
+      {price: '1.67', size: '1.2K'},
+      {price: '1.68', size: '610.68'},
+      {price: '1.69', size: '23.18'},
     ],
     lay: [
-      { price: '1.70', size: '116.54' },
-      { price: '1.71', size: '299.66' },
-      { price: '1.72', size: '709.75' },
+      {price: '1.70', size: '116.54'},
+      {price: '1.71', size: '299.66'},
+      {price: '1.72', size: '709.75'},
     ],
   },
 ];
@@ -157,28 +157,28 @@ const BOTH_TEAMS_SCORE_DATA: MarketOdds[] = [
     id: '1',
     name: 'Yes',
     back: [
-      { price: '1.80', size: '5.2K' },
-      { price: '1.81', size: '3.4K' },
-      { price: '1.82', size: '2.1K' },
+      {price: '1.80', size: '5.2K'},
+      {price: '1.81', size: '3.4K'},
+      {price: '1.82', size: '2.1K'},
     ],
     lay: [
-      { price: '1.83', size: '1.8K' },
-      { price: '1.84', size: '4.2K' },
-      { price: '1.85', size: '3.9K' },
+      {price: '1.83', size: '1.8K'},
+      {price: '1.84', size: '4.2K'},
+      {price: '1.85', size: '3.9K'},
     ],
   },
   {
     id: '2',
     name: 'No',
     back: [
-      { price: '2.05', size: '3.8K' },
-      { price: '2.06', size: '2.4K' },
-      { price: '2.07', size: '1.5K' },
+      {price: '2.05', size: '3.8K'},
+      {price: '2.06', size: '2.4K'},
+      {price: '2.07', size: '1.5K'},
     ],
     lay: [
-      { price: '2.08', size: '1.2K' },
-      { price: '2.09', size: '2.8K' },
-      { price: '2.10', size: '3.1K' },
+      {price: '2.08', size: '1.2K'},
+      {price: '2.09', size: '2.8K'},
+      {price: '2.10', size: '3.1K'},
     ],
   },
 ];
@@ -193,7 +193,7 @@ export default function Soccer() {
   return (
     <div className="min-h-screen bg-[#F5F5F5] font-sans text-[#333]">
       {/* Top Banner Header */}
-      <header className="sticky top-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between bg-[#2C110C] px-4 py-2 text-sm font-semibold text-white gap-2">
+      <header className="top-0 z-50 flex flex-col items-start justify-between gap-2 bg-[#2C110C] px-4 py-2 text-sm font-semibold text-white sm:flex-row sm:items-center">
         <div className="flex items-center gap-2">
           <span>Everton v Man City - English Premier League</span>
         </div>
@@ -678,9 +678,9 @@ export default function Soccer() {
               <h3 className="font-bold">Rules & Info</h3>
             </div>
             <p className="text-gray-600 text-xs leading-relaxed">
-              Place your bets on the soccer match outcome. Back (Blue) means you think it
-              will happen. Lay (Pink) means you think it won't. Odd values are
-              updated periodically based on market liquidity.
+              Place your bets on the soccer match outcome. Back (Blue) means you
+              think it will happen. Lay (Pink) means you think it won't. Odd
+              values are updated periodically based on market liquidity.
             </p>
           </div>
         </aside>
